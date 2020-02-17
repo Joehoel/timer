@@ -22,10 +22,12 @@ function startTimer() {
 function display(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
-
-  timer.textContent = `${minutes}:${
+  const timeLeft = `${minutes}:${
     remainderSeconds > 9 ? remainderSeconds : `0${remainderSeconds}`
   }`;
+
+  document.title = timeLeft;
+  timer.textContent = timeLeft;
 }
 
 async function installServiceWorkerAsync() {
