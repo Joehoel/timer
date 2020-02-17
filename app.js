@@ -1,12 +1,13 @@
 const timer = document.getElementById('timer');
-let clicked;
+let countdown;
 
 function startTimer() {
-  clicked = true;
+  clearInterval(countdown);
+
   const now = Date.now();
   const then = now + 1500 * 1000;
 
-  const countdown = setInterval(() => {
+  countdown = setInterval(() => {
     const secondsLeft = Math.round((then - Date.now()) / 1000);
     // Check if we should stop it!
     if (secondsLeft <= 0) {
