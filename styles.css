@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
+body {
+  font-family: "Roboto Mono";
+  -webkit-font-smoothing: antialiased;
+  background-color: #1e1e1e;
+  color: #e3e6e8;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow: all;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#timer {
+  font-size: 10rem;
+  cursor: pointer;
+}
