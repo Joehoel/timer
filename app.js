@@ -43,8 +43,4 @@ async function installServiceWorkerAsync() {
 
 window.addEventListener('load', installServiceWorkerAsync);
 
-if (clicked) {
-  document.body.removeEventListener('click');
-} else {
-  document.body.addEventListener('click', startTimer);
-}
+document.body.addEventListener('click', startTimer);
