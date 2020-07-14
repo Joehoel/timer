@@ -54,5 +54,5 @@ buttons.forEach(button =>
 )
 window.addEventListener("load", () => {
 	display(timer.dataset.time * 60)
-	// installServiceWorkerAsync()
+	installServiceWorkerAsync()
 })
