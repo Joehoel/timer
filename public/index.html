@@ -18,21 +18,24 @@
 	<body>
 		<main>
 			<div class="container">
+				<div class="timer">
+					<span id="timer"></span>
+				</div>
 				<div class="grid">
-					<div class="card timer">
-						<span id="timer" data-time="25"></span>
-					</div>
-					<div class="options">
-						<div class="card" data-time="15">
-							<h3>15 min</h3>
-						</div>
-						<div class="card" data-time="10">
-							<h3>10 min</h3>
-						</div>
-						<div class="card" data-time="5">
-							<h3>5 min</h3>
-						</div>
-					</div>
+					<button class="btn time" data-time="1500">
+						<h3>25 min</h3>
+					</button>
+					<button class="btn time" data-time="900">
+						<h3>15 min</h3>
+					</button>
+					<button class="btn time" data-time="600">
+						<h3>10 min</h3>
+					</button>
+					<button class="btn time" data-time="300">
+						<h3>5 min</h3>
+					</button>
+					<button class="btn start">Start</button>
+					<button class="btn pause">Pause</button>
 				</div>
 			</div>
 		</main>

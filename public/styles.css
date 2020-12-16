@@ -4,7 +4,7 @@
 	--primary-color: #e7e7e7;
 	--secondary-color: #fff;
 	--text-color: #1a1a1a;
-
+	--gap: 0.5rem;
 	--font-size: 1rem;
 }
 
@@ -23,42 +23,95 @@ body {
 	color: var(--text-color);
 }
 
+main {
+	height: 100vh;
+	width: 100vw;
+}
+
 .container {
+	margin: 0 auto;
+	width: 300px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
+	height: 100%;
 }
 
-.grid .options {
+.grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: var(--font-size);
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--gap);
 }
 
-.card {
-	margin-bottom: var(--font-size);
+.timer {
+	--font-size: 6rem;
+	border-radius: 2px;
+	padding: 1rem 2rem;
+	border: 0;
+	width: 100%;
+	text-align: center;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+	font-weight: 500;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	font-size: var(--font-size);
+	margin-bottom: var(--gap);
+}
+
+.btn.start {
+	--secondary-color: green;
+}
+
+.btn.pause {
+	--secondary-color: red;
+}
+
+/* .card {
 	position: relative;
 	border-radius: 2px;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	padding: calc(var(--font-size) * 2);
 	cursor: pointer;
 	background-color: var(--secondary-color);
 	text-align: center;
 	overflow: hidden;
+} */
+
+/* .card:hover {
+	q box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	transform: scale(0.95);
+} */
+
+.btn {
+	border-radius: 2px;
+	padding: 0.5rem 1rem;
+	border: 0;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+	font-weight: 500;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	cursor: pointer;
 }
 
-.card:hover {
-	/* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+.btn:hover {
+	filter: brightness(80%);
+}
+
+.btn:active {
 	transform: scale(0.95);
 }
 
-#timer {
-	font-size: calc(var(--font-size) * 8);
+.btn:focus {
+	outline: 0;
 }
+
+/* #timer {
+	font-size: calc(var(--font-size) * 8);
+} */
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -69,7 +122,7 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-	body {
+	/* body {
 		--font-size: 0.8rem;
 		overflow: hidden;
 	}
@@ -78,5 +131,5 @@ body {
 		display: flex;
 		width: 100vw;
 		height: 100vh;
-	}
+	} */
 }
