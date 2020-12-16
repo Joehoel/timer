@@ -45,9 +45,7 @@ function display(seconds) {
 async function installServiceWorkerAsync() {
 	if ("serviceWorker" in navigator) {
 		try {
-			const serviceWorker = await navigator.serviceWorker.register(
-				"/sw.js"
-			);
+			const serviceWorker = await navigator.serviceWorker.register("./sw.js");
 		} catch (error) {
 			console.error(`Failed to register service worker: ${error}`);
 		}
