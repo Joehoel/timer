@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const cacheName = "V1";
+const cacheName = "V2";
 
 self.addEventListener("install", async function () {
 	const cache = await caches.open(cacheName);
