@@ -3,7 +3,7 @@ const cacheName = "V2";
 
 self.addEventListener("install", async function () {
 	const cache = await caches.open(cacheName);
-	cache.addAll(["../public/index.html", "../public/styles.css", "./app.js"]);
+	cache.addAll(["../index.html", "../styles.css", "./app.js"]);
 });
 
 self.addEventListener("fetch", event => {

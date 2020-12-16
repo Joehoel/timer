@@ -4,8 +4,8 @@
 	"description": "> Joël Kuijper",
 	"main": "app.js",
 	"scripts": {
-		"dev": "parcel public/index.html",
-		"build": "parcel build public/index.html --out-dir ./docs"
+		"dev": "parcel index.html",
+		"build": "parcel build index.html --out-dir ./docs"
 	},
 	"repository": {
 		"type": "git",
