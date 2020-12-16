@@ -1,7 +1,9 @@
 const timer = document.getElementById("timer");
 const buttons = document.querySelectorAll("[data-time]");
 const alarm = document.querySelector("#alarm");
+
 let countdown;
+const volume = 0.05;
 
 function startTimer(seconds) {
 	clearInterval(countdown);
@@ -20,6 +22,7 @@ function startTimer(seconds) {
 			clearInterval(countdown);
 
 			timer.textContent = "Reset";
+			alarm.volume = volume;
 			alarm.loop = true;
 			alarm.play();
 
