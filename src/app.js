@@ -68,6 +68,7 @@ buttons.forEach(button =>
 start.addEventListener("click", startTimer);
 
 pause.addEventListener("click", () => {
+	alarm.pause();
 	clearInterval(countdown);
 });
 
