@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="msapplication-starturl" content="/index.html" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="application-name" content="Timer" />
+		<meta name="apple-mobile-web-app-title" content="Timer" />
+		<link rel="icon" type="image/png" href="./assets/icons/icon-96x96.png" />
+		<link rel="manifest" href="./manifest.webmanifest" />
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+		<title>Timer</title>
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<div class="timer">
+					<span id="timer"></span>
+				</div>
+				<div class="grid">
+					<button class="btn time" data-time="1500">
+						<h3>25 min</h3>
+					</button>
+					<button class="btn time" data-time="900">
+						<h3>15 min</h3>
+					</button>
+					<button class="btn time" data-time="600">
+						<h3>10 min</h3>
+					</button>
+					<button class="btn time" data-time="300">
+						<h3>5 min</h3>
+					</button>
+					<button class="btn start">Start</button>
+					<button class="btn pause">Pause</button>
+				</div>
+			</div>
+		</main>
+
+		<audio id="alarm" src="./assets/alarm.mp3"></audio>
+
+		<script src="../src/app.js"></script>
+	</body>
+</html>

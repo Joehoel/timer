@@ -1,25 +1,30 @@
 const timer = document.getElementById("timer");
-const buttons = document.querySelectorAll("[data-time]");
+const buttons = document.querySelectorAll(".btn.time");
 const alarm = document.querySelector("#alarm");
-let countdown;
+const start = document.querySelector(".start");
+const pause = document.querySelector(".pause");
 
-function startTimer(seconds) {
+let countdown;
+let time = 1500;
+const volume = 0.05;
+
+function startTimer() {
 	clearInterval(countdown);
 	alarm.pause();
-	display(seconds);
+	display(time);
 
 	const now = Date.now();
-	const then = now + seconds * 1000;
+	const then = now + time * 1000;
 
 	countdown = setInterval(() => {
 		const secondsLeft = Math.round((then - Date.now()) / 1000);
-		// Check if we should stop it!
 		display(secondsLeft);
+		time = secondsLeft;
 
 		if (secondsLeft <= 0) {
 			clearInterval(countdown);
 
-			timer.textContent = "Reset";
+			alarm.volume = volume;
 			alarm.loop = true;
 			alarm.play();
 
@@ -45,9 +50,7 @@ function display(seconds) {
 async function installServiceWorkerAsync() {
 	if ("serviceWorker" in navigator) {
 		try {
-			const serviceWorker = await navigator.serviceWorker.register(
-				"/sw.js"
-			);
+			const serviceWorker = await navigator.serviceWorker.register("./sw.js");
 		} catch (error) {
 			console.error(`Failed to register service worker: ${error}`);
 		}
@@ -56,11 +59,19 @@ async function installServiceWorkerAsync() {
 
 buttons.forEach(button =>
 	button.addEventListener("click", () => {
-		startTimer(button.dataset.time * 60);
+		clearInterval(countdown);
+		time = parseInt(button.dataset.time);
+		display(time);
 	})
 );
 
+start.addEventListener("click", startTimer);
+
+pause.addEventListener("click", () => {
+	clearInterval(countdown);
+});
+
 window.addEventListener("load", () => {
-	display(timer.dataset.time * 60);
+	display(time);
 	installServiceWorkerAsync();
 });
