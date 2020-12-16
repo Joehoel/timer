@@ -1,0 +1,23 @@
+{
+  "name": "timer",
+  "version": "1.0.0",
+  "description": "> Joël Kuijper",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joehoel/timer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joehoel/timer/issues"
+  },
+  "homepage": "https://github.com/Joehoel/timer#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
