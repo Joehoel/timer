@@ -72,7 +72,7 @@ pause.addEventListener("click", () => {
 	clearInterval(countdown);
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
 	display(time);
 	installServiceWorkerAsync();
 });
