@@ -5,7 +5,8 @@
 	"main": "app.js",
 	"scripts": {
 		"dev": "parcel ./public/index.html",
-		"build": "parcel build ./public/index.html --out-dir ./docs --public-url ./"
+		"build": "parcel build ./public/index.html --out-dir ./docs --public-url ./",
+		"postbuild": "workbox generateSW"
 	},
 	"repository": {
 		"type": "git",

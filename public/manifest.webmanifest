@@ -5,7 +5,7 @@
 	"background_color": "#1e1e1e",
 	"display": "fullscreen",
 	"Scope": "/",
-	"start_url": "/",
+	"start_url": ".",
 	"icons": [
 		{
 			"src": "public/assets/icons/manifest-icon-192.png",
