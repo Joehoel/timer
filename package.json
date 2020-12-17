@@ -23,6 +23,7 @@
 	},
 	"homepage": "https://github.com/Joehoel/timer#readme",
 	"devDependencies": {
-		"parcel-bundler": "^1.12.4"
+		"parcel-bundler": "^1.12.4",
+		"workbox-cli": "^6.0.2"
 	}
 }
