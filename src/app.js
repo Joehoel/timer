@@ -48,7 +48,7 @@ function display(seconds) {
 }
 
 async function installServiceWorkerAsync() {
-	if ("serviceWorker" in navigator) {
+	if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
 		try {
 			const serviceWorker = await navigator.serviceWorker.register("./sw.js");
 		} catch (error) {

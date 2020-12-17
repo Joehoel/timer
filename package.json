@@ -11,6 +11,9 @@
 		"type": "git",
 		"url": "git+https://github.com/Joehoel/timer.git"
 	},
+	"browserslist": [
+		"since 2017-06"
+	],
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
