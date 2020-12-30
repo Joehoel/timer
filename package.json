@@ -23,6 +23,7 @@
 	},
 	"homepage": "https://github.com/Joehoel/timer#readme",
 	"devDependencies": {
+		"cssnano": "^4.1.10",
 		"parcel-bundler": "^1.12.4",
 		"workbox-cli": "^6.0.2"
 	}
