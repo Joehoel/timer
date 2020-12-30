@@ -1,3 +1,4 @@
-* [ ] Add database
-* [ ] Add input to track
-* [x] Add start, pause, reset buttons
+-   [ ] Add database
+-   [ ] Add input to track
+-   [x] Add start, pause, reset buttons
+-   [ ] Add native notification when timer is done

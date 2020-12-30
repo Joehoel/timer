@@ -1,3 +1,5 @@
+import { notification } from "./notification";
+
 const timer = document.getElementById("timer");
 const buttons = document.querySelectorAll(".btn.time");
 const alarm = document.querySelector("#alarm");
@@ -16,7 +18,7 @@ function startTimer() {
 	const now = Date.now();
 	const then = now + time * 1000;
 
-	countdown = setInterval(() => {
+	countdown = setInterval(async () => {
 		const secondsLeft = Math.round((then - Date.now()) / 1000);
 		display(secondsLeft);
 		time = secondsLeft;
@@ -27,6 +29,9 @@ function startTimer() {
 			alarm.volume = volume;
 			alarm.loop = true;
 			alarm.play();
+			notification("Timer is done", {
+				body: "Time to take a 5 minute break!",
+			});
 
 			return false;
 		}
@@ -52,7 +57,7 @@ buttons.forEach(button =>
 		clearInterval(countdown);
 		time = parseInt(button.dataset.time);
 		display(time);
-	})
+	}),
 );
 
 start.addEventListener("click", startTimer);
@@ -81,7 +86,7 @@ navigator.serviceWorker
 					if (navigator.serviceWorker.controller) {
 						console.log(
 							"New content is available and will be used when all " +
-								"tabs for this page are closed. See https://bit.ly/CRA-PWA."
+								"tabs for this page are closed. See https://bit.ly/CRA-PWA.",
 						);
 					} else {
 						console.log("Content is cached for offline use.");
