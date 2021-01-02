@@ -1,18 +1,20 @@
 import { notification } from "./notification";
 
-const timer = document.getElementById("timer");
-const buttons = document.querySelectorAll(".btn.time");
-const alarm = document.querySelector("#alarm");
-const start = document.querySelector(".start");
-const pause = document.querySelector(".pause");
+const timer = document.getElementById("timer") as HTMLSpanElement;
+const buttons = document.querySelectorAll(".btn.time") as NodeListOf<HTMLButtonElement>;
+const alarm = document.querySelector("#alarm") as HTMLMediaElement;
+const start = document.querySelector(".start") as HTMLButtonElement;
+const pause = document.querySelector(".pause") as HTMLButtonElement;
 
-let countdown;
+let countdown: NodeJS.Timeout;
 let time = 1500;
 const volume = 0.05;
 
 function startTimer() {
 	clearInterval(countdown);
-	alarm.pause();
+
+	pause.textContent = "Pause";
+	alarm!.pause();
 	display(time);
 
 	const now = Date.now();
@@ -32,6 +34,7 @@ function startTimer() {
 			notification("Timer is done", {
 				body: "Time to take a 5 minute break!",
 			});
+			pause.textContent = "Reset";
 
 			return false;
 		}
@@ -40,7 +43,7 @@ function startTimer() {
 	}, 1000);
 }
 
-function display(seconds) {
+function display(seconds: number) {
 	const minutes = Math.floor(seconds / 60);
 	const remainderSeconds = seconds % 60;
 
@@ -52,10 +55,10 @@ function display(seconds) {
 	timer.textContent = timeLeft;
 }
 
-buttons.forEach(button =>
+buttons.forEach((button: HTMLButtonElement) =>
 	button.addEventListener("click", () => {
 		clearInterval(countdown);
-		time = parseInt(button.dataset.time);
+		time = parseInt(button.dataset.time!);
 		display(time);
 	}),
 );
@@ -71,6 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	display(time);
 });
 
+//#region service worker
 const sw = "./sw.js"; // it is needed because parcel will not recognize this as a file and not precess in its manner
 
 navigator.serviceWorker
@@ -98,3 +102,4 @@ navigator.serviceWorker
 	.catch(error => {
 		console.error("Error during service worker registration:", error);
 	});
+//#endregion

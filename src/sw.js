@@ -18,7 +18,7 @@ self.addEventListener("fetch", event => {
 					caches.open(cacheName).then(cache => {
 						cache.put(event.request.url, response.clone());
 						return response;
-					})
+					}),
 				);
 			})
 			.catch(error => {
@@ -26,8 +26,8 @@ self.addEventListener("fetch", event => {
 					caches.open(cacheName).then(cache => {
 						cache.put(event.request.url, response.clone());
 						return response;
-					})
+					}),
 				);
-			})
+			}),
 	);
 });
