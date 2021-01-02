@@ -1,18 +1,34 @@
 import { notification } from "./notification";
 
-const timer = document.getElementById("timer");
-const buttons = document.querySelectorAll(".btn.time");
-const alarm = document.querySelector("#alarm");
-const start = document.querySelector(".start");
-const pause = document.querySelector(".pause");
+import { PrismaClient } from "@prisma/client";
+const db = new PrismaClient();
 
-let countdown;
+async function main() {
+	await db.session.create({
+		data: {
+			time: 1600,
+		},
+	});
+
+	const sessions = await db.session.findMany();
+	console.log(sessions);
+}
+
+main().catch(console.log);
+
+const timer = document.getElementById("timer") as HTMLSpanElement;
+const buttons = document.querySelectorAll(".btn.time") as NodeListOf<HTMLButtonElement>;
+const alarm = document.querySelector("#alarm") as HTMLAudioElement;
+const start = document.querySelector(".start") as HTMLButtonElement;
+const pause = document.querySelector(".pause") as HTMLButtonElement;
+
+let countdown: NodeJS.Timeout;
 let time = 1500;
 const volume = 0.05;
 
 function startTimer() {
 	clearInterval(countdown);
-	alarm.pause();
+	alarm!.pause();
 	display(time);
 
 	const now = Date.now();
@@ -40,7 +56,7 @@ function startTimer() {
 	}, 1000);
 }
 
-function display(seconds) {
+function display(seconds: number) {
 	const minutes = Math.floor(seconds / 60);
 	const remainderSeconds = seconds % 60;
 
@@ -52,10 +68,10 @@ function display(seconds) {
 	timer.textContent = timeLeft;
 }
 
-buttons.forEach(button =>
+buttons.forEach((button: HTMLButtonElement) =>
 	button.addEventListener("click", () => {
 		clearInterval(countdown);
-		time = parseInt(button.dataset.time);
+		time = parseInt(button.dataset.time!);
 		display(time);
 	}),
 );
