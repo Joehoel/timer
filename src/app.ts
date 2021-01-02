@@ -1,24 +1,8 @@
 import { notification } from "./notification";
 
-import { PrismaClient } from "@prisma/client";
-const db = new PrismaClient();
-
-async function main() {
-	await db.session.create({
-		data: {
-			time: 1600,
-		},
-	});
-
-	const sessions = await db.session.findMany();
-	console.log(sessions);
-}
-
-main().catch(console.log);
-
 const timer = document.getElementById("timer") as HTMLSpanElement;
 const buttons = document.querySelectorAll(".btn.time") as NodeListOf<HTMLButtonElement>;
-const alarm = document.querySelector("#alarm") as HTMLAudioElement;
+const alarm = document.querySelector("#alarm") as HTMLMediaElement;
 const start = document.querySelector(".start") as HTMLButtonElement;
 const pause = document.querySelector(".pause") as HTMLButtonElement;
 
@@ -28,6 +12,8 @@ const volume = 0.05;
 
 function startTimer() {
 	clearInterval(countdown);
+
+	pause.textContent = "Pause";
 	alarm!.pause();
 	display(time);
 
@@ -48,6 +34,7 @@ function startTimer() {
 			notification("Timer is done", {
 				body: "Time to take a 5 minute break!",
 			});
+			pause.textContent = "Reset";
 
 			return false;
 		}
@@ -87,6 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	display(time);
 });
 
+//#region service worker
 const sw = "./sw.js"; // it is needed because parcel will not recognize this as a file and not precess in its manner
 
 navigator.serviceWorker
@@ -114,3 +102,4 @@ navigator.serviceWorker
 	.catch(error => {
 		console.error("Error during service worker registration:", error);
 	});
+//#endregion

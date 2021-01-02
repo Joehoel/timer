@@ -23,13 +23,10 @@
 	},
 	"homepage": "https://github.com/Joehoel/timer#readme",
 	"devDependencies": {
-		"@prisma/cli": "^2.13.1",
 		"cssnano": "^4.1.10",
 		"parcel-bundler": "^1.12.4",
 		"typescript": "^4.1.3",
 		"workbox-cli": "^6.0.2"
 	},
-	"dependencies": {
-		"@prisma/client": "^2.13.1"
-	}
+	"dependencies": {}
 }
