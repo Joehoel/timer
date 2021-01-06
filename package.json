@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "> Joël Kuijper",
 	"engines": {
-		"node": "12"
+		"node": "10.23.1"
 	},
 	"scripts": {
 		"dev": "parcel ./public/index.html",
