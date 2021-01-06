@@ -15,9 +15,22 @@ module.exports = {
 				green: colors.green,
 			},
 		},
+		animation: {
+			fade: "fade 0.5s ease",
+		},
+		keyframes: {
+			fade: {
+				"0%": {
+					opacity: 0,
+				},
+				"100%": {
+					opacity: 100,
+				},
+			},
+		},
 	},
 	variants: {
-		extend: {},
+		extend: { scale: ["active"] },
 	},
 	plugins: [],
 };

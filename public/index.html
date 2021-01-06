@@ -154,11 +154,13 @@
 	<body>
 		<main>
 			<div class="flex items-center flex-col justify-center h-full w-60 mx-auto">
-				<div class="timer btn text-6xl font-mono w-full text-center font-bold mb-2 px-2 py-6 dark:hover:bg-gray-800 hover:bg-gray-100">
-					<span id="timer" class="select-none transition-all duration-500"></span>
+				<div
+					class="timer btn text-6xl font-mono w-full text-center font-bold mb-2 px-2 py-6 dark:hover:bg-gray-800 hover:bg-gray-100 active:scale-100"
+				>
+					<span id="timer" class="select-none"></span>
 				</div>
 				<div class="grid grid-cols-2 gap-2 w-full">
-					<button class="time btn" data-time="1500">
+					<button class="time btn transform active:" data-time="1500">
 						<h3>25 min</h3>
 					</button>
 					<button class="time btn" data-time="900">
