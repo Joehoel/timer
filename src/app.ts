@@ -47,9 +47,7 @@ function display(seconds: number) {
 	const minutes = Math.floor(seconds / 60);
 	const remainderSeconds = seconds % 60;
 
-	const timeLeft = `${minutes}:${
-		remainderSeconds > 9 ? remainderSeconds : `0${remainderSeconds}`
-	}`;
+	const timeLeft = `${minutes}:${remainderSeconds > 9 ? remainderSeconds : `0${remainderSeconds}`}`;
 
 	document.title = timeLeft;
 	timer.textContent = timeLeft;
@@ -60,7 +58,7 @@ buttons.forEach((button: HTMLButtonElement) =>
 		clearInterval(countdown);
 		time = parseInt(button.dataset.time!);
 		display(time);
-	}),
+	})
 );
 
 start.addEventListener("click", startTimer);
@@ -70,8 +68,9 @@ pause.addEventListener("click", () => {
 	clearInterval(countdown);
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
 	display(time);
+	await Notification.requestPermission();
 });
 
 //#region service worker
@@ -89,8 +88,7 @@ navigator.serviceWorker
 				if (installingWorker.state === "installed") {
 					if (navigator.serviceWorker.controller) {
 						console.log(
-							"New content is available and will be used when all " +
-								"tabs for this page are closed. See https://bit.ly/CRA-PWA.",
+							"New content is available and will be used when all " + "tabs for this page are closed. See https://bit.ly/CRA-PWA."
 						);
 					} else {
 						console.log("Content is cached for offline use.");

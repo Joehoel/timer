@@ -8,7 +8,8 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="application-name" content="Timer" />
 		<meta name="apple-mobile-web-app-title" content="Timer" />
-		<link rel="stylesheet" href="./styles.css" />
+		<!-- <link rel="stylesheet" href="./styles/styles.css" /> -->
+		<link rel="stylesheet" href="./styles/tailwind.pcss" />
 		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
 		<link rel="manifest" href="./site.webmanifest" />
 		<link rel="icon" type="image/png" href="./assets/icons/icon-256x256.png" />
@@ -152,25 +153,25 @@
 	</head>
 	<body>
 		<main>
-			<div class="container">
-				<div class="timer">
-					<span id="timer"></span>
+			<div class="flex items-center flex-col justify-center h-full w-60 mx-auto">
+				<div class="timer btn text-6xl font-mono w-full text-center font-bold mb-2 px-2 py-6 dark:hover:bg-gray-800 hover:bg-gray-100">
+					<span id="timer" class="select-none transition-all duration-500"></span>
 				</div>
-				<div class="grid">
-					<button class="btn time" data-time="1500">
+				<div class="grid grid-cols-2 gap-2 w-full">
+					<button class="time btn" data-time="1500">
 						<h3>25 min</h3>
 					</button>
-					<button class="btn time" data-time="900">
+					<button class="time btn" data-time="900">
 						<h3>15 min</h3>
 					</button>
-					<button class="btn time" data-time="600">
+					<button class="time btn" data-time="600">
 						<h3>10 min</h3>
 					</button>
-					<button class="btn time" data-time="300">
+					<button class="time btn" data-time="300">
 						<h3>5 min</h3>
 					</button>
-					<button class="btn action start">Start</button>
-					<button class="btn action pause">Pause</button>
+					<button class="action start btn bg-green-700 ring-green-300 text-gray-100 hover:bg-green-800">Start</button>
+					<button class="action pause btn bg-red-700 ring-red-300 text-gray-100 hover:bg-red-800">Pause</button>
 				</div>
 			</div>
 		</main>
