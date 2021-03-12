@@ -1,184 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="msapplication-starturl" content="/index.html" />
-		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="application-name" content="Timer" />
-		<meta name="apple-mobile-web-app-title" content="Timer" />
-		<!-- <link rel="stylesheet" href="./styles/styles.css" /> -->
-		<!-- <link rel="stylesheet" href="./styles/tailwind.pcss" /> -->
-		<link rel="stylesheet" href="./styles/index.css" />
-		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
-		<link rel="manifest" href="./site.webmanifest" />
-		<link rel="icon" type="image/png" href="./assets/icons/icon-256x256.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-starturl" content="/index.html" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Timer" />
+    <meta name="apple-mobile-web-app-title" content="Timer" />
+    <!-- <link rel="stylesheet" href="./styles/styles.css" /> -->
+    <!-- <link rel="stylesheet" href="./styles/tailwind.pcss" /> -->
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="icon" type="image/png" href="./assets/icons/icon-256x256.png" />
 
-		<link rel="apple-touch-icon" href="./assets/icons/apple-icon-180.png" />
+    <link rel="apple-touch-icon" href="./assets/icons/apple-icon-180.png" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2048-2732.jpg"
-			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2732-2048.jpg"
-			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1668-2388.jpg"
-			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2388-1668.jpg"
-			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1536-2048.jpg"
-			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2048-1536.jpg"
-			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1668-2224.jpg"
-			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2224-1668.jpg"
-			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1620-2160.jpg"
-			media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2160-1620.jpg"
-			media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1284-2778.jpg"
-			media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2778-1284.jpg"
-			media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1170-2532.jpg"
-			media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2532-1170.jpg"
-			media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1125-2436.jpg"
-			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2436-1125.jpg"
-			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1242-2688.jpg"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2688-1242.jpg"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-828-1792.jpg"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1792-828.jpg"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1242-2208.jpg"
-			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-2208-1242.jpg"
-			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-750-1334.jpg"
-			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1334-750.jpg"
-			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-640-1136.jpg"
-			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="./assets/icons/apple-splash-1136-640.jpg"
-			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<title>Timer</title>
-		<script defer type="module" src="../src/app.ts"></script>
-	</head>
-	<body>
-		<main>
-			<div class="flex items-center flex-col justify-center h-full w-60 mx-auto">
-				<div
-					class="timer btn text-6xl font-mono w-full text-center font-bold mb-2 px-2 py-6 dark:hover:bg-gray-800 hover:bg-gray-100 active:scale-100"
-				>
-					<span id="timer" class="select-none"></span>
-				</div>
-				<div class="grid grid-cols-2 gap-2 w-full">
-					<button class="time btn" data-time="1500">
-						<h3>25 min</h3>
-					</button>
-					<button class="time btn" data-time="900">
-						<h3>15 min</h3>
-					</button>
-					<button class="time btn" data-time="600">
-						<h3>10 min</h3>
-					</button>
-					<button class="time btn" data-time="300">
-						<h3>5 min</h3>
-					</button>
-					<button class="action start btn bg-green-700 ring-green-300 text-gray-100 hover:bg-green-800">Start</button>
-					<button class="action pause btn bg-red-700 ring-red-300 text-gray-100 hover:bg-red-800">Pause</button>
-				</div>
-			</div>
-		</main>
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2048-2732.jpg"
+      media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2732-2048.jpg"
+      media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1668-2388.jpg"
+      media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2388-1668.jpg"
+      media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1536-2048.jpg"
+      media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2048-1536.jpg"
+      media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1668-2224.jpg"
+      media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2224-1668.jpg"
+      media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1620-2160.jpg"
+      media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2160-1620.jpg"
+      media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1284-2778.jpg"
+      media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2778-1284.jpg"
+      media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1170-2532.jpg"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2532-1170.jpg"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1125-2436.jpg"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2436-1125.jpg"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1242-2688.jpg"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2688-1242.jpg"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-828-1792.jpg"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1792-828.jpg"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1242-2208.jpg"
+      media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-2208-1242.jpg"
+      media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-750-1334.jpg"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1334-750.jpg"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-640-1136.jpg"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="./assets/icons/apple-splash-1136-640.jpg"
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <title>Timer</title>
+    <script defer type="module" src="../src/app.ts"></script>
+  </head>
+  <body>
+    <main>
+      <div
+        class="flex items-center flex-col justify-center h-full w-60 mx-auto"
+      >
+        <div
+          class="timer btn text-6xl font-mono w-full text-center font-bold mb-2 px-2 py-6 dark:hover:bg-gray-800 hover:bg-gray-100 active:scale-100"
+        >
+          <span id="timer" class="select-none"></span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 w-full">
+          <button class="time btn" data-time="1500">
+            <h3>25 min</h3>
+          </button>
+          <button class="time btn" data-time="900">
+            <h3>15 min</h3>
+          </button>
+          <button class="time btn" data-time="600">
+            <h3>10 min</h3>
+          </button>
+          <button class="time btn" data-time="300">
+            <h3>5 min</h3>
+          </button>
+          <button
+            class="action start btn bg-green-700 ring-green-300 text-gray-100 hover:bg-green-800"
+          >
+            Start
+          </button>
+          <button
+            class="action pause btn bg-red-700 ring-red-300 text-gray-100 hover:bg-red-800"
+          >
+            Pause
+          </button>
+        </div>
+      </div>
+    </main>
 
-		<audio id="alarm" src="./assets/alarm.mp3"></audio>
-	</body>
+    <audio id="alarm" src="./assets/alarm.mp3"></audio>
+  </body>
 </html>
